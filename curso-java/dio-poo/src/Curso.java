@@ -1,30 +1,10 @@
-public class Curso {
+public class Curso extends Conteudo {
 
-	private String titulo;
-	private String descricao;
 	private int cargaHoraria;
 
-	public Curso(String titulo, String descricao, int cargaHoraria) {
+	public Curso(int cargaHoraria) {
 		super();
-		this.titulo = titulo;
-		this.descricao = descricao;
 		this.cargaHoraria = cargaHoraria;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 	public int getCargaHoraria() {
@@ -37,7 +17,14 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso [titulo=" + titulo + ", descricao=" + descricao + ", cargaHoraria=" + cargaHoraria + "]";
+		return "Curso [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", cargaHoraria=" + cargaHoraria
+				+ "]";
+	}
+
+	@Override
+	public double calculaXp() {
+
+		return XP_PADRAO * cargaHoraria;
 	}
 
 }
